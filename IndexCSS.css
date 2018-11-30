@@ -1,0 +1,43 @@
+.MainMenuTitle{
+  font-size: 56px;
+  text-align: center;
+  color: #FFFFFF;
+  font-family: "Courier New", Courier, monospace;
+  text-shadow: 4px 4px #923842;
+  margin-bottom: 12px;
+}
+.Buttons{
+  text-align: center;
+  color: white;
+  background-color: #ff704d;
+  border: none;
+  font-size: 25px;
+  border-radius: 8px;
+  transition-duration: 0.4s;
+  margin-top: 12px;
+  width: 350px;
+  height: 60px;
+}
+
+.formBackground
+{
+  background-color: #ffc2b3;
+  border-radius: 8px;
+  padding: 24px 24px 24px 24px;
+}
+
+.Buttons:hover{
+  color: black;
+  background-color:white;
+  border-color: #ff704d;
+  cursor: pointer;
+}
+.Texts
+{
+  margin-top: 12px;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: text;
+  width: 400px;
+  height: 30px;
+}

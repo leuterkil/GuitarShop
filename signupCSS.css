@@ -1,0 +1,52 @@
+.header
+{
+  font-size: 22px;
+  text-align: center;
+  color: black;
+  font-family: "Courier New", Courier, monospace;
+}
+.Texts
+{
+  margin-top: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: text;
+  width: 400px;
+  height: 30px;
+}
+
+.formBackground
+{
+  background-color: #ffc2b3;
+  border-radius: 8px;
+  padding: 24px 24px 24px 24px;
+}
+.choosebox
+{
+  margin-top: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
+  width: 400px;
+  height: 30px;
+}
+.Buttons:hover{
+  color: black;
+  background-color:white;
+  border-color: #ff704d;
+  cursor: pointer;
+}
+.Buttons{
+  text-align: center;
+  color: white;
+  background-color: #ff704d;
+  border: none;
+  font-size: 25px;
+  border-radius: 8px;
+  transition-duration: 0.4s;
+  margin-top: 12px;
+  width: 350px;
+  height: 60px;
+} 
