@@ -20,7 +20,7 @@
            Repeat Password: <br>
            <input type="password" name="repeatPass" placeholder="Repeat Your Password Again" class="Texts"><br>
            Email Adress:<br>
-           <input type="email" name="Email"placeholder="ex.you@yahoo.com" class="Texts"><br>
+           <input type="text" name="Email"placeholder="ex.you@yahoo.com" class="Texts"><br>
            Full Name:<br>
            <input type="text" name="FullName"placeholder="Full Name..." class="Texts"><br>
            Country of region:<br>
