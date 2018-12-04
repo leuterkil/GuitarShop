@@ -1,7 +1,6 @@
 .MainMenuTitle{
   font-size: 56px;
   text-align: center;
-  color: #FFFFFF;
   font-family: "Courier New", Courier, monospace;
   text-shadow: 4px 4px #923842;
   margin-bottom: 12px;
@@ -40,4 +39,12 @@
   cursor: text;
   width: 400px;
   height: 30px;
+}
+
+.errorInText {
+  border:2px solid red;
+}
+.errorLog
+{
+  color: red;
 }
