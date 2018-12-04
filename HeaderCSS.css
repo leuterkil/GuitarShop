@@ -1,0 +1,85 @@
+.Logo
+{
+  font-size: 28px;
+  color: #FFFFFF;
+  font-family: "Courier New", Courier, monospace;
+  text-shadow: 4px 4px #923842;
+}
+.navbar {
+    overflow: hidden;
+    background-color:#ff704d;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+      transition-duration: 0.8s;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  transition-duration: 0.8s;
+    background-color: red;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ff704d;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+      transition-duration: 0.8s;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+      transition-duration: 0.8s;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.Welcome
+{
+  font-size: 28px;
+  color: #FFFFFF;
+  font-family: "Courier New", Courier, monospace;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.MenuColor
+{
+  background-color: grey;
+}
