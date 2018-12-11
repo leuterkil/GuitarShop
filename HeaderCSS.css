@@ -119,3 +119,45 @@ border: none;
   transition-duration: 0.8s;
   cursor: pointer;
 }
+
+#purchaseForm td
+{
+  background: #ff704d;
+}
+
+#purchaseForm td img
+{
+  float: right;
+  width: 20.3%;
+}
+
+.SubmitPur
+{
+  background-color: #ff704d;
+  margin-top: 5%;
+}
+
+.SubmitPur button
+{
+  background: #0099ff;
+  text-align: center;
+  color: white;
+  width:400px;
+  height: 50px;
+  font-size: 17px;
+  transition-duration: 0.8s;
+  border-radius: 8px; 
+
+}
+
+.SubmitPur button:hover
+{
+  background: white;
+  transition-duration: 0.8s;
+  color: blue;
+  cursor: pointer;
+}
+.SubmitPur u
+{
+  background-color: yellow;
+}

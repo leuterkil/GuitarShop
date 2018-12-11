@@ -18,6 +18,9 @@ if(!$result)
   <?php
 }
 else {
+  while ($row = mysqli_fetch_assoc($result)) {
+    $_SESSION["uid"] = $row["id"];
+  }
 Header('location:MainMenu.php');
 }
  ?>

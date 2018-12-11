@@ -21,8 +21,10 @@
            <input type="password" name="repeatPass" placeholder="Repeat Your Password Again" class="Texts"><br>
            Email Adress:<br>
            <input type="text" name="Email"placeholder="ex.you@yahoo.com" class="Texts"><br>
-           Full Name:<br>
-           <input type="text" name="FullName"placeholder="Full Name..." class="Texts"><br>
+           Name:<br>
+           <input type="text" name="FullName"placeholder="Name..." class="Texts"><br>
+           Surname:<br>
+           <input type="text" name="Surname"placeholder="Surname..." class="Texts"><br>
            Country of region:<br>
            <select class="choosebox" name="Country">
              <option value="Greece">Greece</option>
