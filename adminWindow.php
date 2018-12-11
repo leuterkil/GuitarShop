@@ -10,7 +10,7 @@ include 'connection.php';
     <link rel="stylesheet" href="IndexCSS.css">
     <link rel="stylesheet" href="signupCSS.css">
   </head>
-  <body>
+  <body background="https://cdn.wallpapersafari.com/40/29/yUNO4z.jpg">
     <form class="" action="AddProduct.php" method="post">
       <div class="Texts">
         <input type="text" name="name_of_product" placeholder="Name Of Product..." class="Texts">

@@ -36,6 +36,27 @@
     margin: 0;
       transition-duration: 0.8s;
 }
+.search-container
+{
+  float: right;
+}
+.search-container input[type=text]
+{
+padding: 6px;
+margin-top: 8px;
+font-size: 17px;
+border: none;
+}
+.search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
 
 .navbar a:hover, .dropdown:hover .dropbtn {
   transition-duration: 0.8s;
@@ -82,4 +103,19 @@
 .MenuColor
 {
   background-color: grey;
+}
+
+#MainMenuProduct td
+{
+  width: 1%;
+  background: white;
+  border-radius: 30%;
+  margin-left: 30px;
+  transition-duration: 0.8s;
+}
+#MainMenuProduct td:hover
+{
+  background-color:#ff704d;
+  transition-duration: 0.8s;
+  cursor: pointer;
 }
