@@ -2,19 +2,27 @@
 $con=mysqli_connect("localhost","root","");
   mysqli_select_db($con,"guitar_shop");
 
-  $type = $_GET["type"];
-  $sub = $_GET["subtype"];
-  if($sub =="")
+
+
+  if(strlen($_GET["search"])>=1)
   {
+      $search = $_GET["search"];
+        $sql = "Select * FROM products Where name LIKE '%".$search."%'";
+  }
+ else if($_GET["subtype"] ==null)
+  {
+    $type = $_GET["type"];
     $sql = "Select * FROM products Where type = '".$type."'";
   }
-  else
+  else if(isset($_GET["subtype"]))
   {
+    $type = $_GET["type"];
+    $sub = $_GET["subtype"];
   $sql = "Select * FROM products Where type = '".$type."' And subtype ='".$sub."'";
 }
   $result = mysqli_query($con,$sql);
   if (!$result) {
-    // code...
+    echo mysqli_error($con);
   }
   else {
 if (mysqli_num_rows($result) == 0)
