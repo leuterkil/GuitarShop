@@ -50,6 +50,7 @@ if (mysqli_num_rows($result) == 0)
         <?php
         // output data of each row
         while($row = mysqli_fetch_assoc($result)) {
+        $product_id = $row["id"];
         $price=$row["price"];
         $name=$row["name"];
         $desc=$row["description"];
@@ -59,7 +60,8 @@ if (mysqli_num_rows($result) == 0)
         $cents = $row["cents"];
 
         echo  "<tr>";
-            echo"<td><span id=decimalfont>".$name."</span><br><img src=".$photo." width = 128 height = 128></td>";
+            echo"<td><span id=decimalfont>".$name."</span><br><a href = Purchases.php?id=".$product_id.">
+            <img src=".$photo." width = 128 height = 128></a></td>";
             echo"<td>".$desc."</td>";
             echo"<td><b><span id=decimalfont>".$price.",</span>".$cents."€</b></td>";
           echo"</tr>";

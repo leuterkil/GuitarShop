@@ -26,13 +26,14 @@ else {
       <table id="MainMenuProduct" border="3">
         <tr>
       <?php  while($row = mysqli_fetch_assoc($result1)) {
+        $id = $row["id"];
               $price=$row["price"];
               $name=$row["name"];
               $photo=$row["photo"];
               $cents = $row["cents"];
         // code...
       ?>
-              <td><center><img src="<?=$photo?>" style="width:50%"></center><br>
+              <td><center> <a href="Purchases.php?id=<?=$id?>"> <img src="<?=$photo?>" style="width:50%"></a></center><br>
                 <span id="decimalfont"><center><?=$name?></span><br>
                 <b><span id="decimalfont"><?=$price?></span>.<?=$cents?>€</b></center></td>
       <?php }} ?>

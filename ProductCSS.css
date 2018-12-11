@@ -26,13 +26,20 @@ color: white;
 #catalog tr:nth-child(even){background-color: grey;}
 
 #catalog tr:hover {background-color:#ff704d;
-transition-duration: 0.8s;
-cursor: pointer;}
-
+transition-duration: 0.8s;}
+td img:hover
+{
+  cursor: pointer;
+}
 #decimalfont
 {
   font-size: 22px;
 
+}
+
+#decimalfontpur
+{
+font-size: 35px; 
 }
 #description
 {
