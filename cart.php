@@ -47,7 +47,7 @@ else {
       <tr>
         <td><?=$product_name?></td>
         <td> <span id="decimalfont"> <b><?=$product_price?></span>.<?=$product_cents?>€</b></td>
-        <td> <a href="removefromcart.php">remove from cart</a> </td>
+        <td> <a href="removefromcart.php?id=<?=$product_id?>">remove from cart</a> </td>
       </tr>
       <?php
     }
