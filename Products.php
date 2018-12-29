@@ -89,7 +89,7 @@ if (mysqli_num_rows($result) == 0)
         <tr>
             <td><span id="decimalfont"><?=$name?></span><br><a href = "Purchases.php?id=<?=$product_id?>">
             <img src="<?=$photo?>" width = "128" height = "128"></a></td>
-            <td><?=$desc?></td>;
+            <td><?=$desc?></td>
             <td><b><span id="decimalfont"><?=$price?>,</span><?=$cents?>€</b>
               <?php
               if ($heartstatus=="fa fa-heart") {
