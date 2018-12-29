@@ -8,7 +8,6 @@ $query = "Select * from users where username ='".$username."'and pass = '".sha1(
 $result = mysqli_query($con,$query);
 if(!$result)
 {
-  echo mysqli_error($con);
 ?>
   <script type="text/javascript">
   document.getElementById('errorLog').innerHTML = "Wrong Username or Password";
@@ -18,9 +17,19 @@ if(!$result)
   <?php
 }
 else {
+  if (mysqli_num_rows($result)==0) {
+    ?>
+    <script type="text/javascript">
+    document.getElementById('errorLog').innerHTML = "Wrong Username or Password";
+    document.getElementById('username_log').style.borderColor="red";
+   document.getElementById('username_log').style.borderStyle="solid";
+    </script>
+    <?php
+  }
+  else {
   while ($row = mysqli_fetch_assoc($result)) {
     $_SESSION["uid"] = $row["id"];
   }
 Header('location:MainMenu.php');
-}
+}}
  ?>

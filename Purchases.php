@@ -47,13 +47,14 @@ else {
      <title></title>
      <link rel="stylesheet" href="HeaderCSS.css">
      <link rel="stylesheet" href="ProductsCSS.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    </head>
    <body>
      <center><form class="SubmitPur" action="purchaseCheck.php" method="get">
        <img src=<?=$photo?> alt="" height="256px" width="256px"><h1><?=$NameOfProduct?></h1><br>
         <b><span id="decimalfontpur"><?=$decimal?></span>.<?=$cents?>€</b>
-        <br> <button type="submit" name="id" value=<?=$product_id?>><b>Confirm Purchase</b></button>
-        <h2><b><i> <u>customer details</u></i></b></h2>
+        <br> <button type="submit" name="id" value=<?=$product_id?>> <i class="fa fa-shopping-cart"></i> <b>Confirm Purchase</b></button>
+        <h2> <i class="fa fa-id-badge"></i> <b><i><u>customer details</u></i></b></h2>
         <h3> <b> Name: <?=$Name?></b> </h3>
         <h3> <b> Surname: <?=$sur?></b> </h3>
         <h3> <b> Country: <?=$country?></b> </h3>

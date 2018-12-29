@@ -1,8 +1,25 @@
-<?php include 'Header.html';
-$con=mysqli_connect("localhost","root","");
-  mysqli_select_db($con,"guitar_shop");
+<?php
+include 'connection.php';
+include 'Header.html';
 
-
+function favoriteCheck($product,$connection)
+{
+  $fav="select * from favorites where user_id=".$_SESSION["uid"]." and product_id=".$product;
+  $resultfav = mysqli_query($connection,$fav);
+  if(!$resultfav)
+  {
+    echo mysqli_error($resultfav);
+  }
+  else {
+    if(mysqli_num_rows($resultfav)==0)
+    {
+      return 0;
+    }
+    else {
+      return 1;
+    }
+  }
+}
 
   if(strlen($_GET["search"])>=1)
   {
@@ -38,6 +55,7 @@ if (mysqli_num_rows($result) == 0)
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="ProductCSS.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
       <table id="catalog">
@@ -58,13 +76,32 @@ if (mysqli_num_rows($result) == 0)
         $subt=$row["subtype"];
         $photo=$row["photo"];
         $cents = $row["cents"];
+        $favorited = favoriteCheck($product_id,$con);
 
-        echo  "<tr>";
-            echo"<td><span id=decimalfont>".$name."</span><br><a href = Purchases.php?id=".$product_id.">
-            <img src=".$photo." width = 128 height = 128></a></td>";
-            echo"<td>".$desc."</td>";
-            echo"<td><b><span id=decimalfont>".$price.",</span>".$cents."€</b></td>";
-          echo"</tr>";
+        if($favorited==0)
+        {
+          $heartstatus="fa fa-heart-o";
+        }
+        else {
+          $heartstatus = "fa fa-heart";
+        }
+?>
+        <tr>
+            <td><span id="decimalfont"><?=$name?></span><br><a href = "Purchases.php?id=<?=$product_id?>">
+            <img src="<?=$photo?>" width = "128" height = "128"></a></td>
+            <td><?=$desc?></td>;
+            <td><b><span id="decimalfont"><?=$price?>,</span><?=$cents?>€</b>
+              <?php
+              if ($heartstatus=="fa fa-heart") {
+                $link = "removefromfav.php";
+              }
+              else {
+                $link = "addtofavorites.php";
+              }
+               ?>
+               <a href="<?=$link?>?id=<?=$product_id?>"><i class="<?=$heartstatus?>" style="font-size:36px;float:right;color:red;"></i></a></td>
+          </tr>
+      <?php
       }
     }
     }
