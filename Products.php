@@ -2,6 +2,7 @@
 include 'connection.php';
 include 'Header.html';
 
+
 function favoriteCheck($product,$connection)
 {
   $fav="select * from favorites where user_id=".$_SESSION["uid"]." and product_id=".$product;
@@ -21,21 +22,25 @@ function favoriteCheck($product,$connection)
   }
 }
 
+$startrow = $_GET['startrow'];
   if(strlen($_GET["search"])>=1)
   {
       $search = $_GET["search"];
-        $sql = "Select * FROM products Where name LIKE '%".$search."%'";
+        $sql = "Select * FROM products Where name LIKE '%".$search."%'LIMIT ".$startrow.",10";
+        $currentlink = "Products.php?search=".$search;
   }
  else if($_GET["subtype"] ==null)
   {
     $type = $_GET["type"];
-    $sql = "Select * FROM products Where type = '".$type."'";
+    $sql = "Select * FROM products Where type = '".$type."'LIMIT ".$startrow.",10";
+    $currentlink = "Products.php?type=".$type."&subtype=&search=";
   }
   else if(isset($_GET["subtype"]))
   {
     $type = $_GET["type"];
     $sub = $_GET["subtype"];
-  $sql = "Select * FROM products Where type = '".$type."' And subtype ='".$sub."'";
+  $sql = "Select * FROM products Where type = '".$type."' And subtype ='".$sub."'LIMIT ".$startrow.",10";
+  $currentlink = "Products.php?type=".$type."&subtype=".$sub."&search=";
 }
   $result = mysqli_query($con,$sql);
   if (!$result) {
@@ -47,7 +52,9 @@ if (mysqli_num_rows($result) == 0)
 
   }
   else{
-
+    if(!isset($startrow))
+    $startrow=0;
+    $maxrow=mysqli_num_rows($result);
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -107,6 +114,29 @@ if (mysqli_num_rows($result) == 0)
     }
         ?>
       </table>
+      <?php
+      if ($startrow==0&&$maxrow==10) {
+        ?>
+        <center><a href="<?=$currentlink?>&startrow=<?=$startrow+10?>">Next</a></center>
+        <?php
+      }
+
+    else  if ($maxrow==10) {
+        ?>
+        <center><a href="<?=$currentlink?>&startrow=<?=$startrow-10?>">Previous</a></center>
+        <center><a href="<?=$currentlink?>&startrow=<?=$startrow+10?>">Next</a></center>
+        <?php
+      } else if($startrow>=10) {
+        ?>
+        <center><a href="<?=$currentlink?>&startrow=<?=$startrow-10?>">Previous</a></center>
+        <?php
+      }
+      else {
+
+      }
+
+       ?>
+
 
   </body>
 </html>
