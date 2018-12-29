@@ -1,8 +1,25 @@
-<?php include 'Header.html';
-$con=mysqli_connect("localhost","root","");
-  mysqli_select_db($con,"guitar_shop");
+<?php
+include 'connection.php';
+include 'Header.html';
 
-
+function favoriteCheck($product,$connection)
+{
+  $fav="select * from favorites where user_id=".$_SESSION["uid"]." and product_id=".$product;
+  $resultfav = mysqli_query($connection,$fav);
+  if(!$resultfav)
+  {
+    echo mysqli_error($resultfav);
+  }
+  else {
+    if(mysqli_num_rows($resultfav)==0)
+    {
+      return 0;
+    }
+    else {
+      return 1;
+    }
+  }
+}
 
   if(strlen($_GET["search"])>=1)
   {
@@ -59,7 +76,7 @@ if (mysqli_num_rows($result) == 0)
         $subt=$row["subtype"];
         $photo=$row["photo"];
         $cents = $row["cents"];
-        $favorited = $row["favorite"];
+        $favorited = favoriteCheck($product_id,$con);
 
         if($favorited==0)
         {

@@ -11,7 +11,7 @@ include 'Header.html';
   </tr>
 <?php
 
-$query = "select * from products where favorite = 1";
+$query = "select * from favorites,products where user_id=".$_SESSION["uid"]." and favorites.product_id=products.id";
 
 $result = mysqli_query($con,$query);
 
@@ -28,13 +28,12 @@ else {
     $subt=$row["subtype"];
     $photo=$row["photo"];
     $cents = $row["cents"];
-    $favorited = $row["favorite"];
     ?>
 
       <tr>
         <td><span id="decimalfont"><?=$name?></span><br><a href = "Purchases.php?id=<?=$product_id?>">
         <img src="<?=$photo?>" width = "128" height = "128"></a></td>
-        <td><?=$desc?></td>;
+        <td><?=$desc?></td>
         <td><b><span id="decimalfont"><?=$price?>,</span><?=$cents?>€</b>
            <a href="removefromfav.php?id=<?=$product_id?>"><i class="fa fa-heart" style="font-size:36px;float:right;color:red;"></i></a></td>
       </tr>
