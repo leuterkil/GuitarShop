@@ -3,7 +3,7 @@ include 'connection.php';
 include 'Header.html';
 $username = $_SESSION["username"];
 $recaddedquery = "Select * from products order by datee desc limit 5";
-$top5="select name,product_id,id,photo,price,cents, count(purchases.product_id) from purchases,products where purchases.product_id=products.id group by purchases.product_id order by purchases.product_id desc "
+$top5="select name,product_id,id,photo,price,cents, count(purchases.product_id) from purchases,products where purchases.product_id=products.id group by purchases.product_id order by purchases.product_id desc limit 5 ";
 $result1 = mysqli_query($con,$recaddedquery);
 $result2 = mysqli_query($con,$top5);
 if (!$result1) {
@@ -56,9 +56,10 @@ else {
               <td><center> <a href="Purchases.php?id=<?=$id?>"> <img src="<?=$photo?>" style="width:50%"></a></center><br>
                 <span id="decimalfont"><center><?=$name?></span><br>
                 <b><span id="decimalfont"><?=$price?></span>.<?=$cents?>€</b></center></td>
-      <?php }} ?>
+      <?php } ?>
     </tr>
   </table>
+<?php }?>
 </div>
   </body>
 </html>
