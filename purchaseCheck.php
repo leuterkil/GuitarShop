@@ -14,8 +14,11 @@ for ($i=0; $i <count($pro); $i++) {
   else {
     $removefromcart = "delete from cart where user_idcart=".$user_id;
     $resultrem = mysqli_query($con,$removefromcart);
+    Header("location:MainMenu.php");
+    ?> <i style = "font-size:36px;color:white;">Products Successfully Purchased <a href="MainMenu.php">Go Back</a> </i> <?php
     if ($resultrem) {
-      Header("location:MainMenu.php");
+
+
     }
 
     ?>
