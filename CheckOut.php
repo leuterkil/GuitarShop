@@ -14,5 +14,6 @@ if(!$result)
 }
 else {
  Header("location:MainMenu.php");
+ echo "<i style = color:white;font-size:36px;>product Added to cart";?> <a href="MainMenu.php">go back</i></a> <?php
 }
  ?>

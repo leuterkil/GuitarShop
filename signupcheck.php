@@ -21,7 +21,7 @@
     elseif(!isset($username)){ echo "enter a username <a href=signup.php>go back</a>";}
     elseif(!isset($mail)){ echo "enter a mail <a href=signup.php>go back</a>";}
     else {
-    $query = "insert into users (username,pass,email,country,surname,Name) values('".$username."','".sha1($password)."','".$mail."','".$Country."','".$surname."','".$Fname."')";
+    $query = "insert into users (username,pass,email,country,surname,Name) values('".$username."','".sha1($password)."','".$mail."','".$Country."','".$sur."','".$Fname."')";
     $result=mysqli_query($con,$query);
     if (!$result) {
       echo "something went wrong <a href=signup.php>go back</a>";

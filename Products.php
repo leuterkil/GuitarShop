@@ -117,18 +117,18 @@ if (mysqli_num_rows($result) == 0)
       <?php
       if ($startrow==0&&$maxrow==10) {
         ?>
-        <center><a href="<?=$currentlink?>&startrow=<?=$startrow+10?>">Next</a></center>
+        <center><a href="<?=$currentlink?>&startrow=<?=$startrow+10?>"><i class="fa fa-arrow-circle-right" style="color:red;font-size:36px;"></i> </a></center>
         <?php
       }
 
     else  if ($maxrow==10) {
         ?>
-        <center><a href="<?=$currentlink?>&startrow=<?=$startrow-10?>">Previous</a></center>
-        <center><a href="<?=$currentlink?>&startrow=<?=$startrow+10?>">Next</a></center>
+        <center><a href="<?=$currentlink?>&startrow=<?=$startrow-10?>"> <i class="fa fa-arrow-circle-left" style="color:red;font-size:36px;"></i> </a></center>
+        <center><a href="<?=$currentlink?>&startrow=<?=$startrow+10?>"><i class="fa fa-arrow-circle-right" style="color:red;font-size:36px;"></i> </a></center>
         <?php
       } else if($startrow>=10) {
         ?>
-        <center><a href="<?=$currentlink?>&startrow=<?=$startrow-10?>">Previous</a></center>
+        <center><a href="<?=$currentlink?>&startrow=<?=$startrow-10?>"><i class="fa fa-arrow-circle-left" style="color:red;font-size:36px;"></i> </a></center>
         <?php
       }
       else {
